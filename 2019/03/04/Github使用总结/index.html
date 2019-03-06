@@ -1,0 +1,225 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Github使用总结"><meta name="keywords" content="Github"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>Github使用总结【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"LG9SIY4DTC","apiKey":"0bbb94313570fd8a0d2430ff89b2b2f2","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装git"><span class="toc-number">1.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速开始"><span class="toc-number">2.</span> <span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#远程仓库"><span class="toc-number">3.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#帮助文档"><span class="toc-number">4.</span> <span class="toc-text">帮助文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">5.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#补充"><span class="toc-number">6.</span> <span class="toc-text">补充</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color5"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color9"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">12</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">12</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">15</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Github使用总结</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-03-04 | 更新于 2019-03-06</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/学习资料/">学习资料</a><i class="fa fa-angle-right" style="margin: 0 8px;"></i><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/学习资料/Github/">Github</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/Github/">Github</a></div></div></div><div class="main-content"><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官网地址</a></p>
+<ul>
+<li>安装完成后，还需要最后一步设置，在命令行输入：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><ol>
+<li><p>创建版本库。版本库又名仓库，英文名repository，你可以简单理解成一个目录（.git），这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将新建文件提交到仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add your_add_file_name   <span class="comment">#将新文件添加到索引</span></span><br><span class="line">git commit -m <span class="string">"你的提交描述说明"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库,Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向master的一个指针叫<code>HEAD</code></strong><br><a href="https://imgchr.com/i/kXBsmV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/03/05/kXBsmV.jpg" alt="分析图"></a></p>
+<ol>
+<li><code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区</li>
+<li>用<code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支<a id="more"></a>
+</li>
+</ol>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><ol>
+<li><p>创建SSH Key。在用户主目录下，看看有没有.ssh目录及id_rsa和pub_rsa这几个文件，如果没有需要创建</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>登陆GitHub，打开“Account settings”，“SSH Keys”页面,将pub_rsa内容粘贴进去</p>
+</li>
+</ol>
+<h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">使用方法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">clone</td>
+<td style="text-align:center">git clone “仓库链接”</td>
+<td style="text-align:center">将存储库克隆到新目录中</td>
+</tr>
+<tr>
+<td style="text-align:center">init</td>
+<td style="text-align:center">git init</td>
+<td style="text-align:center">创建空的Git存储库或重新初始化现有的Git存储库</td>
+</tr>
+<tr>
+<td style="text-align:center">add</td>
+<td style="text-align:center">git add *</td>
+<td style="text-align:center">将文件内容添加到索引</td>
+</tr>
+<tr>
+<td style="text-align:center">mv</td>
+<td style="text-align:center">git mv -f file newfile</td>
+<td style="text-align:center">移动或重命名文件、目录或符号链接</td>
+</tr>
+<tr>
+<td style="text-align:center">reset</td>
+<td style="text-align:center">git reset --hard HEAD^</td>
+<td style="text-align:center">将当前磁头重置为指定状态</td>
+</tr>
+<tr>
+<td style="text-align:center">rm</td>
+<td style="text-align:center">git rm your_file</td>
+<td style="text-align:center">从工作树和索引中删除文件</td>
+</tr>
+<tr>
+<td style="text-align:center">bisect</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">使用二进制搜索查找引入错误的提交</td>
+</tr>
+<tr>
+<td style="text-align:center">grep</td>
+<td style="text-align:center">git grep your_wordkey</td>
+<td style="text-align:center">打印与图案匹配的线条</td>
+</tr>
+<tr>
+<td style="text-align:center">log</td>
+<td style="text-align:center">git log –oneline</td>
+<td style="text-align:center">显示提交日志</td>
+</tr>
+<tr>
+<td style="text-align:center">show</td>
+<td style="text-align:center">git show tagname</td>
+<td style="text-align:center">显示各种类型的对象</td>
+</tr>
+<tr>
+<td style="text-align:center">status</td>
+<td style="text-align:center">git status</td>
+<td style="text-align:center">显示工作树状态,时刻掌握仓库当前的状态</td>
+</tr>
+<tr>
+<td style="text-align:center">branch</td>
+<td style="text-align:center">git branch</td>
+<td style="text-align:center">列出、创建或删除分支</td>
+</tr>
+<tr>
+<td style="text-align:center">checkout</td>
+<td style="text-align:center">git checkout -- file或git checkout your_branch</td>
+<td style="text-align:center">切换分支或还原工作树文件</td>
+</tr>
+<tr>
+<td style="text-align:center">commit</td>
+<td style="text-align:center">git commit -m “your_der”</td>
+<td style="text-align:center">记录对存储库的更改</td>
+</tr>
+<tr>
+<td style="text-align:center">diff</td>
+<td style="text-align:center">git diff file</td>
+<td style="text-align:center">显示提交、提交和工作树等之间的更改</td>
+</tr>
+<tr>
+<td style="text-align:center">merge</td>
+<td style="text-align:center">git merge your_branch</td>
+<td style="text-align:center">将两个或多个发展历史连接在一起</td>
+</tr>
+<tr>
+<td style="text-align:center">rebase</td>
+<td style="text-align:center">git rebase</td>
+<td style="text-align:center">把分叉的提交历史“整理”成一条直线，看上去更直观</td>
+</tr>
+<tr>
+<td style="text-align:center">tag</td>
+<td style="text-align:center">git tag</td>
+<td style="text-align:center">创建、列出、删除或验证用GPG签名的标记对象</td>
+</tr>
+<tr>
+<td style="text-align:center">fetch</td>
+<td style="text-align:center">git fetch origin 远程分支:本地分支</td>
+<td style="text-align:center">从另一个存储库下载对象和引用</td>
+</tr>
+<tr>
+<td style="text-align:center">pull</td>
+<td style="text-align:center">git pull</td>
+<td style="text-align:center">从另一个存储库或本地分支获取并与之集成</td>
+</tr>
+<tr>
+<td style="text-align:center">push</td>
+<td style="text-align:center">git push origin master</td>
+<td style="text-align:center">更新远程引用和关联对象</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li>git status 查看当前状态</li>
+<li>git log 查看提交日志<blockquote>
+<p>commit的所有记录,git log –graph –pretty=oneline –abbrev-commit 可以简单输出</p>
+</blockquote>
+</li>
+<li>git reflog 查看命令历史<blockquote>
+<p>reflog 是可以查看历史命令,找到未来版本号,用–hard回到未来版本</p>
+</blockquote>
+</li>
+<li>git reset --hard HEAD^<blockquote>
+<p>HEAD^为上一个版本 HEAD^^为上上一个版本 HEAD~100为上一百个版本</p>
+</blockquote>
+</li>
+<li>git checkout -- yourfile<blockquote>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。<br>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作<br>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库</file></p>
+</blockquote>
+</li>
+<li>git remote add origin git\@github.com:yourname/yourrepository.git<blockquote>
+<p>添加远程仓库</p>
+</blockquote>
+</li>
+<li>git push master origin <blockquote>
+<p>将本地文件推送到远程仓库</p>
+</blockquote>
+</li>
+<li>git checkout -b dev<blockquote>
+<p>表示创建并切换分支</p>
+</blockquote>
+</li>
+<li>git merge dev<blockquote>
+<p>用于合并指定分支到当前分支</p>
+</blockquote>
+</li>
+<li>git branch -d dev<blockquote>
+<p>删除当前分支</p>
+</blockquote>
+</li>
+<li><p>分支常用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Git鼓励大量使用分支：</span><br><span class="line"></span><br><span class="line">查看分支：git branch</span><br><span class="line"></span><br><span class="line">创建分支：git branch &lt;name&gt;</span><br><span class="line"></span><br><span class="line">切换分支：git checkout &lt;name&gt;</span><br><span class="line"></span><br><span class="line">创建+切换分支：git checkout -b &lt;name&gt;</span><br><span class="line"></span><br><span class="line">合并某分支到当前分支：git merge &lt;name&gt;</span><br><span class="line"></span><br><span class="line">删除分支：git branch -d &lt;name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git stash </p>
+<blockquote>
+<p>可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作,需要先把文件git add<br>是用git stash apply恢复 但是恢复后，stash内容并不删除你需要用git stash drop来删除<br>git stash pop就是直接恢复最近的并删除stash<br>git stash list 可以查看stash列表</p>
+</blockquote>
+</li>
+<li><p>git checkout -b dev origin/dev</p>
+<blockquote>
+<p>要在dev分支上开发，就必须创建远程origin的dev分支到本地，用这个命令创建本地dev分支</p>
+</blockquote>
+</li>
+<li><p>git 标签总结</p>
+<blockquote>
+<p>命令git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；<br>命令git tag -a <tagname> -m “blablabla…”可以指定标签信息；<br>命令git tag可以查看所有标签。<br>命令git tag <tagname> <head><meta name="generator" content="Hexo 3.8.0"> 对指定版本打标签<br>命令git push origin <tagname>可以推送一个本地标签；<br>命令git push origin –tags可以推送全部未推送过的本地标签；<br>命令git tag -d <tagname>可以删除一个本地标签；<br>命令git push origin :refs/tags/<tagname>可以删除一个远程标签</tagname></tagname></tagname></head></tagname></tagname></tagname></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ol>
+<li>配置忽略文件.gitignore,主要是一些个人的配置文件,禁止上传，格式如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*.pyc</span><br><span class="line">*.ini</span><br><span class="line">*.so</span><br><span class="line">*.egg</span><br><span class="line">*.egg-info</span><br><span class="line">dist</span><br><span class="line">build</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>git add -f your_file 可以强制上忽略的文件<br>git check-ignore -v your_file 可以查看文件忽略的状态</p>
+<ol start="2">
+<li>配置别名<br>设置自己习惯的命令来git，格式如下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">git config --global <span class="built_in">alias</span>.&lt;your_commond&gt; &lt;commond&gt;</span><br><span class="line">会配置如下</span><br><span class="line">$ git config --global alias.co checkout</span><br><span class="line">$ git config --global alias.ci commit</span><br><span class="line">$ git config --global alias.br branch</span><br><span class="line">$ git config --global alias.unstage <span class="string">'reset HEAD'</span></span><br><span class="line">$ git config --global alias.last <span class="string">'log -1'</span></span><br><span class="line">$ git config --global alias.lg <span class="string">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 其实以上命令设置,每个仓库设置都存储在.git/config文件中,当前用户的配置放在.gitconfig中,可手动删除不需要的alias</span></span><br><span class="line">$ cat .git/config </span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">    ignorecase = <span class="literal">true</span></span><br><span class="line">    precomposeunicode = <span class="literal">true</span></span><br><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">    url = git@github.com:michaelliao/learngit.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch <span class="string">"master"</span>]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/master</span><br><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">    last = <span class="built_in">log</span> -1</span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line">$ cat .gitconfig</span><br><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">    co = checkout</span><br><span class="line">    ci = commit</span><br><span class="line">    br = branch</span><br><span class="line">    st = status</span><br><span class="line">[user]</span><br><span class="line">    name = Your Name</span><br><span class="line">    email = your@email.com</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2019/03/04/Github使用总结/">http://bbkali.github.io/2019/03/04/Github使用总结/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/02/28/Sublime-text3配置python编写环境/"><span>Sublime_text3配置python编写环境</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
