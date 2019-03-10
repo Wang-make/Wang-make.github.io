@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="CTF入门指南"><meta name="keywords" content="CTF"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>CTF入门指南【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"LG9SIY4DTC","apiKey":"0bbb94313570fd8a0d2430ff89b2b2f2","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目类型"><span class="toc-number">1.</span> <span class="toc-text">题目类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#入门需要哪些基础"><span class="toc-number">2.</span> <span class="toc-text">入门需要哪些基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何入门学"><span class="toc-number">3.</span> <span class="toc-text">如何入门学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#到底如何学？"><span class="toc-number">4.</span> <span class="toc-text">到底如何学？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析赛题"><span class="toc-number">5.</span> <span class="toc-text">分析赛题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常规做法"><span class="toc-number">6.</span> <span class="toc-text">常规做法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#入门知识"><span class="toc-number">7.</span> <span class="toc-text">入门知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐书"><span class="toc-number">8.</span> <span class="toc-text">推荐书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A方向："><span class="toc-number">8.1.</span> <span class="toc-text">A方向：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B方向："><span class="toc-number">8.2.</span> <span class="toc-text">B方向：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐资源（从基础题目出发）："><span class="toc-number">9.</span> <span class="toc-text">推荐资源（从基础题目出发）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具："><span class="toc-number">10.</span> <span class="toc-text">工具：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参加一场最新的ctf比赛"><span class="toc-number">11.</span> <span class="toc-text">参加一场最新的ctf比赛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组建团队—强力成员画像"><span class="toc-number">12.</span> <span class="toc-text">组建团队—强力成员画像</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color10"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">17</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">18</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">20</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">CTF入门指南</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-03-10 | 更新于 2019-03-10</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/CTF/">CTF</a><i class="fa fa-angle-right" style="margin: 0 8px;"></i><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/CTF/入门指南/">入门指南</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/CTF/">CTF</a></div></div></div><div class="main-content"><hr>
+<p>capture the flag 夺旗比赛,号称计算机界的<code>奥林匹克</code></p>
+<hr>
+<h2 id="题目类型"><a href="#题目类型" class="headerlink" title="题目类型"></a>题目类型</h2><ul>
+<li>Web</li>
+<li>密码学</li>
+<li>pwn 程序的逻辑分析，漏洞利用windows、linux、小型机等</li>
+<li>misc 杂项，隐写，数据还原，脑洞、社会工程、与信息安全相关的大数据</li>
+<li>reverse 逆向windows、linux类</li>
+<li>ppc 编程类的<a id="more"></a>
+</li>
+</ul>
+<h2 id="入门需要哪些基础"><a href="#入门需要哪些基础" class="headerlink" title="入门需要哪些基础"></a>入门需要哪些基础</h2><ol>
+<li>编程语言基础（c、汇编、脚本语言）</li>
+<li>数学基础（算法、密码学）</li>
+<li>脑洞大开（天马行空的想象、推理解密）</li>
+<li>体力耐力（通宵熬夜）</li>
+</ol>
+<h2 id="如何入门学"><a href="#如何入门学" class="headerlink" title="如何入门学"></a>如何入门学</h2><ol>
+<li>恶补基础知识</li>
+<li>尝试从脑洞开始 如黑客game</li>
+<li>从基础题出发 一般都是100，200，最高分在500，600先把100分的学好，可从低分的ctf学起，比较简单，只涉及1，2个点</li>
+<li>学信息安全专业知识</li>
+<li>锻炼体力耐力 周六日都有比赛</li>
+</ol>
+<h2 id="到底如何学？"><a href="#到底如何学？" class="headerlink" title="到底如何学？"></a>到底如何学？</h2><ol>
+<li>分析赛题情况</li>
+<li>分析自身能力 自己最适合哪个方向</li>
+<li>选择更适合的入手</li>
+</ol>
+<h2 id="分析赛题"><a href="#分析赛题" class="headerlink" title="分析赛题"></a>分析赛题</h2><ul>
+<li>PWN、Reverse偏重对汇编、逆向的理解 对底层理解</li>
+<li>Crypto偏重对数学、算法的深入学习 密码课要深入学</li>
+<li>Web偏重对技巧沉淀、快速搜索能力的挑战,发散思维，对底层只需要了解,代码原理，关于漏洞点的积累</li>
+<li>Misc则更复杂,所有与计算机安全挑战有关的都在其中隐写,图片数据分析还原，流量，大数据,对游戏分析逆向</li>
+</ul>
+<h2 id="常规做法"><a href="#常规做法" class="headerlink" title="常规做法"></a>常规做法</h2><ol>
+<li>A方向：PWN+Reverse+Crypto随机搭配</li>
+<li>B方向：Web+Misc组合</li>
+<li>Misc所有人都可以做</li>
+</ol>
+<h2 id="入门知识"><a href="#入门知识" class="headerlink" title="入门知识"></a>入门知识</h2><p>都要学的内容：linux基础、计算机组成原理、操作系统原理、网络协议分析</p>
+<p>A方向：IDA工具使用（fs插件）、逆向工程、密码学、缓冲区溢出等<br>B方向：Web安全、网络安全、内网渗透、数据库安全等 前10的安全漏洞</p>
+<h2 id="推荐书"><a href="#推荐书" class="headerlink" title="推荐书"></a>推荐书</h2><h3 id="A方向："><a href="#A方向：" class="headerlink" title="A方向："></a>A方向：</h3><ul>
+<li>RE for Beginners</li>
+<li>IDA Pro权威指南</li>
+<li>揭秘家庭路由器0day漏洞挖掘技术</li>
+<li>自己定操作系统</li>
+<li>黑客攻防技术宝典：系统实战篇 有各种系统的逆向讲解</li>
+</ul>
+<h3 id="B方向："><a href="#B方向：" class="headerlink" title="B方向："></a>B方向：</h3><ul>
+<li>Web应用安全权威指南 最推荐小白，宏观web安全</li>
+<li>Web前端黑客技术揭秘</li>
+<li>黑客秘籍——渗透测试实用指南</li>
+<li>黑客攻防技术宝典 web实战篇<blockquote>
+<p>web安全的所有核心基础点，有挑战性，最常规，最全，学好会直线上升</p>
+</blockquote>
+</li>
+<li>代码审计：企业级web代码安全架构</li>
+</ul>
+<h2 id="推荐资源（从基础题目出发）："><a href="#推荐资源（从基础题目出发）：" class="headerlink" title="推荐资源（从基础题目出发）："></a>推荐资源（从基础题目出发）：</h2><p><a href="http://ctf.idf.cn" target="_blank" rel="noopener">http://ctf.idf.cn</a> !!!首推 idf实验室：题目非常基础，只1个点<br><a href="http://www.ichunqiu.com" target="_blank" rel="noopener">www.ichunqiu.com</a> 有线下决赛题目复现<br><a href="http://oj.xctf.org.cn/xctf" target="_blank" rel="noopener">http://oj.xctf.org.cn/xctf</a> 题库网站，历年题，练习场，比较难<br><a href="http://www.wechall.net/challs" target="_blank" rel="noopener">www.wechall.net/challs</a> !!!!!!非常入门的国外ctf题库，很多国内都是从这里刷题成长起来的<br><a href="http://canyouhack.it/" target="_blank" rel="noopener">http://canyouhack.it/</a> 国外，入门，有移动安全<br><a href="https://microcorruption.com/login" target="_blank" rel="noopener">https://microcorruption.com/login</a> A方向 密码，逆向酷炫游戏代<br>http：//smashthestack.org A方向，简洁，国外，wargames，过关<br><a href="http://overthewire.ofg/wargames/" target="_blank" rel="noopener">http://overthewire.ofg/wargames/</a> ！！！！推荐A方向 国内资料多，老牌wargame<br>https：//exploit-exercises.com A方向 老牌wargame，国内资料多<br><a href="http://pawnable.kr/play.php" target="_blank" rel="noopener">http://pawnable.kr/play.php</a> pwn类游乐场，不到100题<br><a href="http://ctf.moonsoscom/pentest/index.php" target="_blank" rel="noopener">http://ctf.moonsoscom/pentest/index.php</a> B方向 米安的Web漏洞靶场，基础，核心知识点<br>http：//prompt.ml/0 B方向 国外的xss测试<br><a href="http://redtiger.labs.overthewire.org/" target="_blank" rel="noopener">http://redtiger.labs.overthewire.org/</a> B方向 国外sql注入挑战网站，10关，过关的形式 不同的注入，循序渐近地练习</p>
+<h2 id="工具："><a href="#工具：" class="headerlink" title="工具："></a>工具：</h2><p><a href="https://github.com/truongkma/ctf-tools" target="_blank" rel="noopener">https://github.com/truongkma/ctf-tools</a><br><a href="https://github.com/Plkachu/v0lt" target="_blank" rel="noopener">https://github.com/Plkachu/v0lt</a><br><a href="https://github.com/zardus/ctf-tools" target="_blank" rel="noopener">https://github.com/zardus/ctf-tools</a><br><a href="https://github.com/TUCTF/Tools" target="_blank" rel="noopener">https://github.com/TUCTF/Tools</a></p>
+<p>入门–以练促赛，以赛养练</p>
+<p>选择一场已经存在writeup的比赛</p>
+<p>总结解题过程，分析出题人想法</p>
+<h2 id="参加一场最新的ctf比赛"><a href="#参加一场最新的ctf比赛" class="headerlink" title="参加一场最新的ctf比赛"></a>参加一场最新的ctf比赛</h2><p><a href="https://ctftime.org/" target="_blank" rel="noopener">https://ctftime.org/</a> 国际比赛，有很多基础的<br><a href="http://www.xctf.org.cn/" target="_blank" rel="noopener">http://www.xctf.org.cn/</a> 国内比赛，比较难</p>
+<h2 id="组建团队—强力成员画像"><a href="#组建团队—强力成员画像" class="headerlink" title="组建团队—强力成员画像"></a>组建团队—强力成员画像</h2><ol>
+<li>思维跳跃：灵活性，不会钻墙脚</li>
+<li>专注：遇到问题不放弃直到解决</li>
+<li>耐力：连续一天研究技术</li>
+<li>团队精神：责任、凝聚、分享</li>
+</ol>
+<p>有3条为强力成员，有4条会成为强力队长！</p>
+<p>——————————–总结自i春秋CTF入门指南————————</p>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2019/03/10/CTF入门指南/">http://bbkali.github.io/2019/03/10/CTF入门指南/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/03/10/os模块运用/"><i class="fas fa-angle-left">&nbsp;</i><span>os模块运用</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/03/10/time模块运用/"><span>time模块运用</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
