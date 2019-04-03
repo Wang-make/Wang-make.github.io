@@ -1,0 +1,263 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Windows下常用命令"><meta name="keywords" content="window,常用命令"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>Windows下常用命令【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"X7RY6NGU4G","apiKey":"bf7ed65264918bbc03f12b4cc1212d85","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">1.</span> <span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看基本信息"><span class="toc-number">1.1.</span> <span class="toc-text">查看基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用工具"><span class="toc-number">1.2.</span> <span class="toc-text">常用工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘操作"><span class="toc-number">2.</span> <span class="toc-text">磁盘操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录操作"><span class="toc-number">3.</span> <span class="toc-text">目录操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">4.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存操作"><span class="toc-number">5.</span> <span class="toc-text">内存操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分区操作"><span class="toc-number">6.</span> <span class="toc-text">分区操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他操作"><span class="toc-number">7.</span> <span class="toc-text">其他操作</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color2"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color4"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">38</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">38</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">34</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Windows下常用命令</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-04-03 | 更新于 2019-04-03</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/学习资料/">学习资料</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/window/">window</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/常用命令/">常用命令</a></div></div></div><div class="main-content"><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="查看基本信息"><a href="#查看基本信息" class="headerlink" title="查看基本信息"></a>查看基本信息</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">winver</td>
+<td style="text-align:center">系统信息</td>
+</tr>
+<tr>
+<td style="text-align:center">gpedit.msc</td>
+<td style="text-align:center">–组策略</td>
+</tr>
+<tr>
+<td style="text-align:center">regedit.exe</td>
+<td style="text-align:center">-注册表</td>
+</tr>
+<tr>
+<td style="text-align:center">eventvwr</td>
+<td style="text-align:center">事件查看器</td>
+</tr>
+<tr>
+<td style="text-align:center">lusrmgr.msc</td>
+<td style="text-align:center">用户组查看器</td>
+</tr>
+<tr>
+<td style="text-align:center">services.msc</td>
+<td style="text-align:center">本地服务设置</td>
+</tr>
+<tr>
+<td style="text-align:center">devmgmt.msc</td>
+<td style="text-align:center">设备管理器</td>
+</tr>
+<tr>
+<td style="text-align:center">compmgmt.msc</td>
+<td style="text-align:center">计算机管理</td>
+</tr>
+<tr>
+<td style="text-align:center">diskmgmt.msc</td>
+<td style="text-align:center">磁盘管理实用程序</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h3 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">regedt32</td>
+<td style="text-align:center">-注册表编辑器</td>
+</tr>
+<tr>
+<td style="text-align:center">calc</td>
+<td style="text-align:center">启动计算器</td>
+</tr>
+<tr>
+<td style="text-align:center">taskmgr</td>
+<td style="text-align:center">–任务管理器（2000/xp/2003</td>
+</tr>
+<tr>
+<td style="text-align:center">mmc</td>
+<td style="text-align:center">打开控制台</td>
+</tr>
+<tr>
+<td style="text-align:center">write</td>
+<td style="text-align:center">-写字板</td>
+</tr>
+<tr>
+<td style="text-align:center">notepad</td>
+<td style="text-align:center">–打开记事本</td>
+</tr>
+<tr>
+<td style="text-align:center">mspaint</td>
+<td style="text-align:center">–画图板</td>
+</tr>
+<tr>
+<td style="text-align:center">mstsc</td>
+<td style="text-align:center">-远程桌面连接</td>
+</tr>
+<tr>
+<td style="text-align:center">charmap</td>
+<td style="text-align:center">–启动字符映射表</td>
+</tr>
+<tr>
+<td style="text-align:center">osk</td>
+<td style="text-align:center">打开屏幕键盘</td>
+</tr>
+<tr>
+<td style="text-align:center">magnify</td>
+<td style="text-align:center">–放大镜实用程序</td>
+</tr>
+<tr>
+<td style="text-align:center">mplayer2</td>
+<td style="text-align:center">-媒体播放机</td>
+</tr>
+</tbody>
+</table>
+<h2 id="磁盘操作"><a href="#磁盘操作" class="headerlink" title="磁盘操作"></a>磁盘操作</h2><ul>
+<li>fdisk 隐含 参数 /mbr 重建主引导记录fdisk /mbr 重建主引导记录 </li>
+<li>fdisk 在DOS7.0以后增加了/cmbr参数，可在挂接多个物理硬盘时，重建排序在后面的硬盘的主引导记录，例如：fdisk /cmbr 2，可重写第二个硬盘的主引导记录。（在使用时要十分小心，避免把好的硬盘引导记录损坏） </li>
+<li>format 参数： /q 快速格式化 /u 不可恢复 /autotest 不提示 /s 创建 MS-DOS 引导盘 format c: /q /u /autotest</li>
+</ul>
+<h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><ul>
+<li>DIR [目录名或文件名] [/S][/W][/P][/A] 列出目录 参数: /s 查找子目录/w 只显示文件名 /p 分页/a 显示隐藏文件 DIR format.exe /s查找该盘的format.exe文件并报告位置</li>
+<li>MD (MKDIR) [目录名] 创建目录 MKDIR HELLOWORLD 创建HELLOWORLD目录 </li>
+<li>CD (CHDIR) [目录名] PS:可以使用相对目录或绝对目录 进入目录 CD AA 进入当前文件夹下的AA目录,cd .. 进入上一个文件夹cd \返回根目录;cd c:\windows 进入c:\windows文件夹</li>
+<li>RD ( RMDIR) [目录名] 删除目录 RD HELLOWORLD 删除HELLOWORLD目录</li>
+</ul>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><ul>
+<li>删除目录及其文件： rmdir [目录名或文件名] [/S][/W][/P][/A] 。例 rmdir c:\qqdownload/s 删除C盘的qqdownload目录。 </li>
+<li>del [目录名或文件名] [/f][/s][/q] 删除 参数:/f 删除只读文件/s 删除该目录及其下的所有内容 /q 删除前不确认 </li>
+<li>del c:\del /s /q 自动删除c盘的del目录。 </li>
+<li>copy [源文件或目录] [目标目录] 复制文件 copy d:\pwin98<em>.</em> c:\presetup 将d盘的pwin98的所有文件复制到c盘的presetup下。 </li>
+<li>attrib [参数][源文件或目录] 文件属性操作命令，attrib命令可以列出或修改磁盘上文件的属性，文件属性包括文档（A）、只读(R)、隐藏(H)、系统(S)，例如：attrib -h -r -s io.sys 执行这一命令后，将把DOS系统文件io.sys文件的只读、隐藏、系统属性去掉，这时将可以直接通过dir命令看到io.sys文件。attrib +h +r +s autoexec.bat将为自动批处理文件增加以上属性。</li>
+</ul>
+<h2 id="内存操作"><a href="#内存操作" class="headerlink" title="内存操作"></a>内存操作</h2><ul>
+<li>debug 调试内存 参数 -w [文件名] 写入二进制文件 -o [地址1] [地址2] 输出内存 -q 退出 exp:o 70 10[return] o 71 01 </li>
+<li>[return] 01[return] q[return] DOS下通过写70h/71h PORT改变BIOS密码在CMOS中存放的对应位置的值,用以清除AWARD BIOS密码.debug 还可以破解硬盘保护卡等,但只可以在纯DOS下用。</li>
+</ul>
+<h2 id="分区操作"><a href="#分区操作" class="headerlink" title="分区操作"></a>分区操作</h2><ul>
+<li>给磁盘分区，一般都会分成四个区，磁盘分区由主分区、扩展分区、逻辑分区组成。 </li>
+<li>PQ和Acronis Disk Director这两个工具都可以在不丢失数据的情况下对分区进行调整大小，以及合并等操作，XP系统的话你用PQ，WIN7系统的话用Acronis Disk Director 操作基本一样，可以去网上找教程来看看，再不重装系统的情况下都能调整分区大小，但是建议你还是先备份下数据再调整，毕竟对硬盘直接进行的操作有一定的危险性。</li>
+</ul>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><ul>
+<li>net use ipipc$ “ “ /user:” “ 建立IPC空链接</li>
+<li>net use ipipc$ “密码” /user:”用户名” 建立IPC非空链接</li>
+<li>net use h: ipc$ “密码” /user:”用户名” 直接登陆后映射对方C：到本地为H:</li>
+<li>net use h: ipc$ 登陆后映射对方C：到本地为H:</li>
+<li>net use ipipc$ /del 删除IPC链接</li>
+<li>net use h: /del 删除映射对方到本地的为H:的映射</li>
+<li>net user 用户名　密码　/add 建立用户</li>
+<li>net user guest /active:yes 激活guest用户</li>
+<li>net user 查看有哪些用户</li>
+<li>net user 帐户名 查看帐户的属性</li>
+<li>net localgroup administrators 用户名 /add 把“用户”添加到管理员中使其具有管理员权限</li>
+<li>net start 查看开启了哪些服务</li>
+<li>net start 服务名　开启服务；(如:net start telnet， net start schedule)</li>
+<li>net stop 服务名 停止某服务</li>
+<li>net time 目标ip 查看对方时间</li>
+<li>net time 目标ip /set 设置本地计算机时间与“目标IP”主机的时间同步,加上参数/yes可取消确认信息</li>
+<li>net view 查看本地局域网内开启了哪些共享</li>
+<li>net view ip 查看对方局域网内开启了哪些共享</li>
+<li>net config 显示系统网络设置</li>
+<li>net logoff 断开连接的共享</li>
+<li>net pause 服务名 暂停某服务</li>
+<li>net send ip “文本信息” 向对方发信息</li>
+<li>net ver 局域网内正在使用的网络连接类型和信息</li>
+<li>net share 查看本地开启的共享</li>
+<li>net share ipc$ 开启ipc$共享</li>
+<li>net share ipc$ /del 删除ipc$共享</li>
+<li>net share c$ /del 删除C：共享</li>
+<li>net user guest 12345 用guest用户登陆后用将密码改为12345</li>
+<li>net password 密码 更改系统登陆密码</li>
+<li>netstat -a 查看开启了哪些端口,常用netstat -an</li>
+<li>netstat -n 查看端口的网络连接情况，常用netstat -an</li>
+<li>netstat -v 查看正在进行的工作</li>
+<li>netstat -p 协议名 例：netstat -p tcq/ip 查看某协议使用情况</li>
+<li>netstat -s 查看正在使用的所有协议使用情况</li>
+<li>nbtstat -A ip 对方136到139其中一个端口开了的话，就可查看对方最近登陆的用户名</li>
+<li>tracert -参数 ip(或计算机名) 跟踪路由（数据包），参数：“-w数字”用于设置超时间隔。</li>
+<li>ping ip(或域名) 向对方主机发送默认大小为32字节的数据，参数：“-l[空格]数据包大小”；“-n发送数据次数”；“-t”指一直ping。</li>
+<li>ping -t -l 65550 ip 死亡之ping(发送大于64K的文件并一直ping就成了死亡之ping)</li>
+<li>ipconfig (winipcfg) 用于windows NT及XP(windows 95 98)查看本地ip地址，ipconfig可用参数“/all”显示全部配置信息</li>
+<li>tlist -t 以树行列表显示进程(为系统的附加工具，默认是没有安装的，在安装目录的Support/tools文件夹内)</li>
+<li>kill -F 进程名 加-F参数后强制结束某进程(为系统的附加工具，默认是没有安装的，在安装目录的Support/tools文件夹内)</li>
+<li>del -F 文件名 加-F参数后就可删除只读文件,/AR、/AH、/AS、/AA分别表示删除只读、隐藏、系统、存档文件，/A-R、/A-H、/A-S、/A-A表示删除除只读、隐藏、系统、存档以外的文件。例如“DEL/AR <em>.</em>”表示删除当前目录下所有只读文件，“DEL/A-S <em>.</em>”表示删除当前目录下除系统文件以外的所有文件</li>
+<li>del /S /Q 目录 或用：rmdir /s /Q 目录 /S删除目录及目录下的所有子目录和文件。同时使用参数/Q 可取消删除操作时的系统确认就直接删除。（二个命令作用相同）</li>
+<li>move 盘符路径要移动的文件名　存放移动文件的路径移动后文件名 移动文件,用参数/y将取消确认移动目录存在相同文件的提示就直接覆盖</li>
+<li>fc one.txt two.txt &gt; 3st.txt 对比二个文件并把不同之处输出到3st.txt文件中，”&gt; “和”&gt; &gt;” 是重定向命令</li>
+<li>at id号 开启已注册的某个计划任务</li>
+<li>at /delete 停止所有计划任务，用参数/yes则不需要确认就直接停止</li>
+<li>at id号 /delete 停止某个已注册的计划任务</li>
+<li>at 查看所有的计划任务</li>
+<li>at ip time 程序名(或一个命令) /r 在某时间运行对方某程序并重新启动计算机</li>
+<li>finger username @host 查看最近有哪些用户登陆</li>
+<li>telnet ip 端口 远和登陆服务器,默认端口为23</li>
+<li>open ip 连接到IP（属telnet登陆后的命令）</li>
+<li>telnet 在本机上直接键入telnet 将进入本机的telnet</li>
+<li>copy 路径文件名1　路径文件名2 /y 复制文件1到指定的目录为文件2，用参数/y就同时取消确认你要改写一份现存目录文件</li>
+<li>copy c:srv.exe ipadmin$ 复制本地c:srv.exe到对方的admin下</li>
+<li>copy 1st.jpg/b+2st.txt/a 3st.jpg 将2st.txt的内容藏身到1st.jpg中生成3st.jpg新的文件，注：2st.txt文件头要空三排，参数：/b指二进制文件，/a指ASCLL格式文件</li>
+<li>copy ipadmin$svv.exe c: 或:copyipadmin$<em>.</em> 复制对方admini$共享下的srv.exe文件（所有文件）至本地C：</li>
+<li>xcopy 要复制的文件或目录树　目标地址目录名 复制文件和目录树，用参数/Y将不提示覆盖相同文件</li>
+<li>用参数/e才可连目录下的子目录一起复制到目标地址下。</li>
+<li>tftp -i 自己IP(用肉机作跳板时这用肉机IP) get server.exec:server.exe 登陆后，将“IP”的server.exe下载到目标主机c:server.exe 参数：-i指以二进制模式传送，如传送exe文件时用，如不加-i 则以ASCII模式（传送文本文件模式）进行传送</li>
+<li>tftp -i 对方IP　put c:server.exe 登陆后，上传本地c:server.exe至主机</li>
+<li>ftp ip 端口 用于上传文件至服务器或进行文件操作，默认端口为21。bin指用二进制方式传送（可执行文件进）；默认为ASCII格式传送(文本文件时)</li>
+<li>route print 显示出IP路由，将主要显示网络地址Network addres，子网掩码Netmask，网关地址Gateway addres，接口地址Interface</li>
+<li>arp 查看和处理ARP缓存，ARP是名字解析的意思，负责把一个IP解析成一个物理性的MAC地址。arp -a将显示出全部信息</li>
+<li>start 程序名或命令 /max 或/min 新开一个新窗口并最大化（最小化）运行某程序或命令</li>
+<li>mem 查看cpu使用情况</li>
+<li>attrib 文件名(目录名) 查看某文件（目录）的属性</li>
+<li>attrib 文件名 -A -R -S -H 或 +A +R +S +H 去掉(添加)某文件的 存档，只读，系统，隐藏 属性；用+则是添加为某属性</li>
+<li>dir 查看文件，参数：/Q显示文件及目录属系统哪个用户，/T:C显示文件创建时间，/T:A显示文件上次被访问时间，/T:W上次被修改时间</li>
+<li>date /t 、 time /t 使用此参数即“DATE/T”、“TIME/T”将只显示当前日期和时间，而不必输入新日期和时间</li>
+<li>set 指定环境变量名称=要指派给变量的字符 设置环境变量</li>
+<li>set 显示当前所有的环境变量</li>
+<li>set p(或其它字符) 显示出当前以字符p(或其它字符)开头的所有环境变量</li>
+<li>pause 暂停批处理程序，并显示出：请按任意键继续….</li>
+<li>if 在批处理程序中执行条件处理（更多说明见if命令及变量）</li>
+<li>goto 标签 将cmd.exe导向到批处理程序中带标签的行（标签必须单独一行，且以冒号打头，例如：“：start”标签）</li>
+<li>call 路径批处理文件名 从批处理程序中调用另一个批处理程序 （更多说明见call /?）</li>
+<li>for 对一组文件中的每一个文件执行某个特定命令（更多说明见for命令及变量）</li>
+<li>echo on或off 打开或关闭echo，仅用echo不加参数则显示当前echo设置</li>
+<li>echo 信息 在屏幕上显示出信息</li>
+<li>echo 信息 &gt;&gt; pass.txt 将”信息”保存到pass.txt文件中</li>
+<li>findstr “Hello” aa.txt 在aa.txt文件中寻找字符串hello</li>
+<li>find 文件名 查找某文件</li>
+<li>title 标题名字 更改CMD窗口标题名字</li>
+<li>color 颜色值 设置cmd控制台前景和背景颜色；0=黑、1=蓝、2=绿、3=浅绿、4=红、5=紫、6=黄、7=白、8=灰、9=淡蓝、A=淡绿、B=淡浅绿、C=淡红、D=淡紫、E=淡黄、F=亮白</li>
+<li>prompt 名称 更改cmd.exe的显示的命令提示符(把C:、D:统一改为：EntSky )</li>
+<li>ver 在DOS窗口下显示版本信息 </li>
+<li>winver 弹出一个窗口显示版本信息（内存大小、系统版本、补丁版本、计算机名）</li>
+<li>format 盘符 /FS:类型 格式化磁盘,类型:FAT、FAT32、NTFS ,例：Format D: /FS:NTFS</li>
+<li>md　目录名 创建目录</li>
+<li>replace 源文件　要替换文件的目录 替换文件</li>
+<li>ren 原文件名　新文件名 重命名文件名</li>
+<li>tree 以树形结构显示出目录，用参数-f 将列出第个文件夹中文件名称</li>
+<li>type 文件名 显示文本文件的内容</li>
+<li>more 文件名 逐屏显示输出文件</li>
+<li>doskey 要锁定的命令=字符</li>
+<li>doskey 要解锁命令= 为DOS提供的锁定命令(编辑命令行，重新调用win2k命令，并创建宏)。如：锁定dir命令：doskey dir=entsky (不能用doskey dir=dir)；解锁：doskey dir=</li>
+<li>taskmgr 调出任务管理器</li>
+<li>chkdsk /F D: 检查磁盘D并显示状态报告；加参数/f并修复磁盘上的错误</li>
+<li>tlntadmn telnt服务admn,键入tlntadmn选择3，再选择8,就可以更改telnet服务默认端口23为其它任何端口</li>
+<li>exit 退出cmd.exe程序或目前，用参数/B则是退出当前批处理脚本而不是cmd.exe</li>
+<li>path 路径可执行文件的文件名 为可执行文件设置一个路径。</li>
+<li>cmd 启动一个win2K命令解释窗口。参数：/eff、/en 关闭、开启命令扩展；更我详细说明见cmd /?</li>
+<li>regedit /s 注册表文件名 导入注册表；参数/S指安静模式导入，无任何提示；</li>
+<li>regedit /e 注册表文件名 导出注册表</li>
+<li>cacls 文件名　参数 显示或修改文件访问控制列表（ACL）——针对NTFS格式时。参数：/D 用户名:设定拒绝某用户访问；/P 用户名:perm 替换指定用户的访问权限；/G 用户名:perm 赋予指定用户访问权限；Perm 可以是: N 无，R 读取， W 写入， C 更改(写入)，F 完全控制；例：cacls D: est.txt /D pub 设定d: est.txt拒绝pub用户访问。</li>
+<li>cacls 文件名 查看文件的访问用户权限列表</li>
+<li>REM 文本内容 在批处理文件中添加注解</li>
+<li>netsh 查看或更改本地网络配置情况</li>
+</ul>
+<p>参考资料:</p>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1554284198&amp;ver=1524&amp;signature=vGKHZlSVzeAIlagfOMqBHhAHda20Avd41bGhUUe2mXee0p-SCvHveukhEJhvbll7XAkmq*ZxY77lg6VRSIpGsWNe7zqwJ*MrSemTMfXvO3Q8OY70Y1NBG*4xFuByrOVc&amp;new=1" target="_blank" rel="noopener">Windows下常用的100个CMD指令以及常见的操作</a></li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2019/04/03/Windows下常用命令/">http://bbkali.github.io/2019/04/03/Windows下常用命令/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/04/03/Linux下常用命令大全/"><i class="fas fa-angle-left">&nbsp;</i><span>Linux下常用命令大全</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/03/24/python下的各种器/"><span>python下的各种器</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>

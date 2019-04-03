@@ -1,0 +1,131 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Linux下常用命令大全"><meta name="keywords" content="常用命令,Linux"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>Linux下常用命令大全【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"X7RY6NGU4G","apiKey":"bf7ed65264918bbc03f12b4cc1212d85","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">1.</span> <span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-number">1.1.</span> <span class="toc-text">find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-number">1.2.</span> <span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权限意义"><span class="toc-number">2.</span> <span class="toc-text">权限意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux常见目录"><span class="toc-number">3.</span> <span class="toc-text">Linux常见目录</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color1"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">38</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">38</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">34</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Linux下常用命令大全</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-04-03 | 更新于 2019-04-03</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/笔记总结/">笔记总结</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/常用命令/">常用命令</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/Linux/">Linux</a></div></div></div><div class="main-content"><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><blockquote>
+<p><strong>find 查找位置 -name 文件名</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    -name 文件名      按照文件名查找</span><br><span class="line">    -user 用户名      按照属主用户名查找文件</span><br><span class="line">    -group 组名       按照属组组名查找文件</span><br><span class="line">    -size            按照文件大小k M  如：find / -size +50k</span><br><span class="line">    -<span class="built_in">type</span>            按照文件类型查找(f=普通  d=目录  l=链接)</span><br><span class="line">    -perm            按照权限查找  如：find /root -perm 644</span><br><span class="line">    -iname           按照文件名查找，不区分大小写</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">    </span><br><span class="line">    find / -name aabbcc    查找/目录下名为 aabbcc的文件</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><blockquote>
+<p><strong>grep 选项 ‘字串’ 查找路径</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    -v       反向选择</span><br><span class="line">    -i       忽略大小写</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">    grep -i <span class="string">"root"</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<h2 id="权限意义"><a href="#权限意义" class="headerlink" title="权限意义"></a>权限意义</h2><ol>
+<li><p>权限位</p>
+<p> -rw-r–r–. 1 root root 44736 7月  18 00:38 install.log</p>
+</li>
+<li><p>权限位是十位</p>
+<p> 第一位：代表文件类型<br> -   普通文件<br> d   目录文件<br> l   链接文件<br> 其他九位：代表各用户的权限<br> (前三位=属主权限u  中间三位=属组权限g  其他人权限o)<br> r   读   4<br> w   写   2<br> x   执行  1</p>
+</li>
+<li><p>权限对文件的含义：<br> r：读取文件内容 如：cat、more、head、tail<br> w：编辑、新增、修改文件内容 如：vi、echo 但是不包含删除文件<br> x：可执行  /tmp/11/22/abc   ———    </p>
+</li>
+<li><p>权限对目录的含义：<br> r：可以查询目录下文件名 如：ls<br> w：具有修改目录结构的权限 如：touch、rm、mv、cp<br> x：可以进入目录 如：cd</p>
+</li>
+</ol>
+<h2 id="Linux常见目录"><a href="#Linux常见目录" class="headerlink" title="Linux常见目录"></a>Linux常见目录</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">路径</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">根目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/bin</td>
+<td style="text-align:center">命令保存目录（普通用户就可以读取的命令）</td>
+</tr>
+<tr>
+<td style="text-align:center">/boot</td>
+<td style="text-align:center">启动目录，启动相关文件</td>
+</tr>
+<tr>
+<td style="text-align:center">/dev</td>
+<td style="text-align:center">设备文件保存目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/etc</td>
+<td style="text-align:center">配置文件保存目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/home</td>
+<td style="text-align:center">普通用户的家目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/lib</td>
+<td style="text-align:center">系统库保存目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/mnt</td>
+<td style="text-align:center">系统挂载目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/media</td>
+<td style="text-align:center">挂载目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/root</td>
+<td style="text-align:center">超级用户的家目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/tmp</td>
+<td style="text-align:center">临时目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/sbin</td>
+<td style="text-align:center">命令保存目录（超级用户才能使用的目录）</td>
+</tr>
+<tr>
+<td style="text-align:center">/proc</td>
+<td style="text-align:center">直接写入内存的</td>
+</tr>
+<tr>
+<td style="text-align:center">/sys</td>
+<td style="text-align:center">将内核的一些信息映射，可供应用程序所用</td>
+</tr>
+<tr>
+<td style="text-align:center">/usr</td>
+<td style="text-align:center">系统软件资源目录</td>
+</tr>
+<tr>
+<td style="text-align:center">/usr/bin/</td>
+<td style="text-align:center">系统命令（普通用户）</td>
+</tr>
+<tr>
+<td style="text-align:center">/usr/sbin/</td>
+<td style="text-align:center">系统命令（超级用户）</td>
+</tr>
+<tr>
+<td style="text-align:center">/var</td>
+<td style="text-align:center">系统相关文档内容</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/log/</td>
+<td style="text-align:center">系统日志位置</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/spool/mail/</td>
+<td style="text-align:center">系统默认邮箱位置</td>
+</tr>
+<tr>
+<td style="text-align:center">/var/lib/</td>
+<td style="text-align:center">默认安装的库文件目录</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2019/04/03/Linux下常用命令大全/">http://bbkali.github.io/2019/04/03/Linux下常用命令大全/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/04/03/OWASP-TOP10漏洞及防范/"><i class="fas fa-angle-left">&nbsp;</i><span>OWASP_TOP10漏洞及防范</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/04/03/Windows下常用命令/"><span>Windows下常用命令</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
