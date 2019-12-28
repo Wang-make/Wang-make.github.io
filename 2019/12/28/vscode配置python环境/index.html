@@ -1,0 +1,112 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Vscode配置python环境"><meta name="keywords" content="Vscode"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>Vscode配置python环境【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"X7RY6NGU4G","apiKey":"bf7ed65264918bbc03f12b4cc1212d85","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vscode简介"><span class="toc-number">1.</span> <span class="toc-text">Vscode简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置python设置"><span class="toc-number">2.</span> <span class="toc-text">配置python设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用python插件推荐"><span class="toc-number">3.</span> <span class="toc-text">常用python插件推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#yapf格式化库"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">yapf格式化库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#括号高亮插件Bracket-Pair-Colorizer"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">括号高亮插件Bracket Pair Colorizer</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Vscode常用快捷键"><span class="toc-number">4.</span> <span class="toc-text">Vscode常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他操作"><span class="toc-number">5.</span> <span class="toc-text">其他操作</span></a></li></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color8"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color4"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">59</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">67</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">28</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Vscode配置python环境</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2019-12-28 | 更新于 2019-12-28</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/配置/">配置</a><i class="fa fa-angle-right" style="margin: 0 8px;"></i><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/配置/编程/">编程</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/Vscode/">Vscode</a></div></div></div><div class="main-content"><h2 id="Vscode简介"><a href="#Vscode简介" class="headerlink" title="Vscode简介"></a>Vscode简介</h2><p>   VSCode(Visual Studio Code):它是一个免费的，开源的跨平台编辑器。之所以强调‘编辑器’，可能是VSCode并无意成为一个全尺寸的集成开发环境，也就是IDE。它是由Erich Gamma把Monaco Editor移植到桌面平台上，成为了现今的VSCode. <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="配置python设置"><a href="#配置python设置" class="headerlink" title="配置python设置"></a>配置python设置</h2><ol>
+<li>下载python,<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">下载地址</a>,添加python进入系统环境变量<br><img src="https://i.loli.net/2019/12/26/m9sKiH2fx8kcdlz.gif" alt="5792949-31833c97ae3bd272.gif"></li>
+<li>下载python集合插件<ul>
+<li>打开VScode，按下快捷键Ctrl+Shift+X，进入插件管理页面。</li>
+<li>在搜索栏输入python。</li>
+<li>选择插件，点击安装<br><img src="https://i.loli.net/2019/12/26/aN85DACXt9hiQTn.gif" alt="5792949-8a2465cfedc2530a.gif"></li>
+</ul>
+</li>
+<li>设置配置文件<br>文件-首选项-设置 search pythonpath,将python安装目录填写进去，左下角可以点击切换python版本和环境</li>
+<li><p>vscode语言包安装与选择</p>
+<blockquote>
+<p>使用快捷键组合【Ctrl+Shift+p】，在搜索框中输入“configure display language”，点击安装zh语言包确定后;重启vscode工具.</p>
+<a id="more"></a>
+</blockquote>
+<h2 id="常用python插件推荐"><a href="#常用python插件推荐" class="headerlink" title="常用python插件推荐"></a>常用python插件推荐</h2></li>
+<li>图标插件<blockquote>
+<p>Vscode-icons VSCode 文件图标<br>此插件可以帮助我们根据不同的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型。<br><img src="https://i.loli.net/2019/12/26/BkKfTltDEqHdoUF.jpg" alt="Image.jpg"></p>
+</blockquote>
+</li>
+<li>单词拼写插件<blockquote>
+<p>Code Spell Checker 单词拼写检查<br>我们在编写代码的时候经常会不小心拼写错误造成软件运行失败，安装这个插件后会自动帮我们识别单词拼写错误并且给出修改建议，大大帮我们减轻了排除bug的压力<br><img src="https://i.loli.net/2019/12/26/sDfNOU2SojZc1kp.gif" alt="Image.gif"></p>
+</blockquote>
+</li>
+<li><p>格式化代码插件</p>
+<h5 id="yapf格式化库"><a href="#yapf格式化库" class="headerlink" title="yapf格式化库"></a>yapf格式化库</h5><ul>
+<li><p>首先安装yapf库</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install yapf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后在VS Code菜单栏中依次打开 File—Preferences—Settings，搜索框中搜索“python.formatting.provider”，然后在下拉菜单中选择“yapf”即可</p>
+</li>
+<li>使用时，只需要选中需要格式化的Python代码，然后右键选择“Format Selection”即可实现自动格式化</li>
+</ul>
+</li>
+<li>高亮插件<h5 id="括号高亮插件Bracket-Pair-Colorizer"><a href="#括号高亮插件Bracket-Pair-Colorizer" class="headerlink" title="括号高亮插件Bracket Pair Colorizer"></a>括号高亮插件Bracket Pair Colorizer</h5>  这个插件的作用是给代码中的括号增加颜色，同一对括号是相同的颜色，尤其是在括号中还包着括号的时候，看起来更加的清晰</li>
+</ol>
+<h2 id="Vscode常用快捷键"><a href="#Vscode常用快捷键" class="headerlink" title="Vscode常用快捷键"></a>Vscode常用快捷键</h2><ul>
+<li><p>常用的一些快捷鍵<br><img src="https://i.loli.net/2019/12/26/c1NnhtgoupvTfqM.png" alt="Image.png"></p>
+</li>
+<li><p>自定义快捷键的设置</p>
+<blockquote>
+<p>文件-首选项-键盘快捷方式</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><ol>
+<li><p>设置文件头模板</p>
+<ul>
+<li><p>在VS code中创建Snppets: 首先在File(文件)&gt;Preferences(首选项)&gt;Snippets(用户代码片段)，选择markdown, 在新增加的markdown.json文件中增加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   &#123;</span><br><span class="line">&quot;markdown title&quot;:&#123;</span><br><span class="line">   &quot;prefix&quot;: &quot;mdtitle&quot;,</span><br><span class="line">   &quot;body&quot;: [</span><br><span class="line">      &quot;---&quot;,</span><br><span class="line">      &quot;title:&quot;,</span><br><span class="line">      &quot;date:&quot;,</span><br><span class="line">      &quot;tags:&quot;,</span><br><span class="line">      &quot;categories:&quot;,</span><br><span class="line">      &quot;comments: true&quot;,</span><br><span class="line">      &quot;---&quot;</span><br><span class="line">   ],</span><br><span class="line">   &quot;description&quot;: &quot;notes title&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样子，就能调用ctrl+shift+p,然后insert Snippt，选择mdtitle,就能插入自动插入一段声明，然后加入日期，标签，分类等信息<br>python文件头配置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  &quot;Print to console&quot;: &#123;</span><br><span class="line">	&quot;prefix&quot;: &quot;py&quot;,</span><br><span class="line">	&quot;body&quot;: [</span><br><span class="line">		&quot;# -*- coding: utf-8 -*-&quot;,</span><br><span class="line">		&quot;&apos;&apos;&apos;&quot;,</span><br><span class="line">		&quot;# @CreatedTime :  $CURRENT_YEAR_SHORT年$CURRENT_MONTH_NAME_SHORT$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE&quot;,</span><br><span class="line">		&quot;# @filename : $TM_FILENAME&quot;,</span><br><span class="line">		&quot;# @author: bb&quot;,</span><br><span class="line">		&quot;&apos;&apos;&apos;&quot;,</span><br><span class="line">	],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>好用的便捷命令</p>
+<ul>
+<li><p>打开文件目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\\ 用Vscode打开当前项目目录文件(新建窗口)</span><br><span class="line">code .</span><br><span class="line"></span><br><span class="line">\\ 打开新的项目目录(正在打开的会强制关闭)</span><br><span class="line">code -r .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码格式化检查</p>
+</li>
+<li>在项目中查找关键字</li>
+<li>整行代码上下移动<blockquote>
+<p>Alt + 上下</p>
+</blockquote>
+</li>
+<li><p>快速打开文件</p>
+<blockquote>
+<p>Cmd+P （win Ctrl+P）输入你要打开的文件名,回车打开</p>
+</blockquote>
+</li>
+<li><p>插件搜索框</p>
+<blockquote>
+<p>vscode插件搜索框（ctrl + shift + x）</p>
+</blockquote>
+</li>
+<li><p>命令操作界面</p>
+<blockquote>
+<p>vscode命令界面（ctrl + shift + P）</p>
+</blockquote>
+</li>
+<li><p>跳转到指定行</p>
+<blockquote>
+<p>Ctrl + g 输入行号回车跳转</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>代码审计函数跳转</p>
+<blockquote>
+<p>选择函数，按住Ctrl左键跳转</p>
+</blockquote>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2019/12/28/vscode配置python环境/">http://bbkali.github.io/2019/12/28/vscode配置python环境/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/12/28/vscode配置python环境2/"><i class="fas fa-angle-left">&nbsp;</i><span>vscode配置python环境2</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/05/14/esp8226制作WIFI钓鱼/"><span>esp8226制作WIFI钓鱼</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
