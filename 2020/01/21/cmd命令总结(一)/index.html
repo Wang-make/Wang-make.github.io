@@ -1,0 +1,142 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="cmd命令总结(一)"><meta name="keywords" content="cmd"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>cmd命令总结(一)【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"X7RY6NGU4G","apiKey":"bf7ed65264918bbc03f12b4cc1212d85","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-number">1.</span> <span class="toc-text">基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义cmd界面"><span class="toc-number">1.1.</span> <span class="toc-text">自定义cmd界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-number">1.2.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊字符"><span class="toc-number">1.3.</span> <span class="toc-text">特殊字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通配符"><span class="toc-number">1.4.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑结构"><span class="toc-number">1.5.</span> <span class="toc-text">逻辑结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if语法格式"><span class="toc-number">1.5.1.</span> <span class="toc-text">if语法格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#for语法格式"><span class="toc-number">1.5.2.</span> <span class="toc-text">for语法格式</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color4"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color4"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color9"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">80</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">65</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">31</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">cmd命令总结(一)</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-01-21 | 更新于 2020-01-22</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/cmd/">cmd</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/cmd/">cmd</a></div></div></div><div class="main-content"><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p><strong>cd</strong> 进入文件目录</p>
+<p><strong>dir</strong> 列出目录文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/A          显示具有指定属性的文件。</span><br><span class="line">  属性         D  目录                R  只读文件</span><br><span class="line">               H  隐藏文件            A  准备存档的文件</span><br><span class="line">               S  系统文件            I  无内容索引文件</span><br><span class="line">               L  解析点             -  表示“否”的前缀</span><br><span class="line">  /B          使用空格式(没有标题信息或摘要)。</span><br><span class="line">  /C          在文件大小中显示千位数分隔符。这是默认值。用 /-C 来</span><br><span class="line">              禁用分隔符显示。</span><br><span class="line">  /D          跟宽式相同，但文件是按栏分类列出的。</span><br><span class="line">  /L          用小写。</span><br><span class="line">  /N          新的长列表格式，其中文件名在最右边。</span><br><span class="line">  /O          用分类顺序列出文件。</span><br><span class="line">  排列顺序     N  按名称(字母顺序)     S  按大小(从小到大)</span><br><span class="line">               E  按扩展名(字母顺序)   D  按日期/时间(从先到后)</span><br><span class="line">               G  组目录优先           -  反转顺序的前缀</span><br><span class="line">  /P          在每个信息屏幕后暂停。</span><br><span class="line">  /Q          显示文件所有者。</span><br><span class="line">  /R          显示文件的备用数据流。</span><br><span class="line">  /S          显示指定目录和所有子目录中的文件。</span><br><span class="line">  /T          控制显示或用来分类的时间字符域。</span><br><span class="line">  时间段      C  创建时间</span><br><span class="line">              A  上次访问时间</span><br><span class="line">              W  上次写入的时间</span><br><span class="line">  /W          用宽列表格式。</span><br><span class="line">  /X          显示为非 8.3 文件名产生的短名称。格式是 /N 的格式，</span><br><span class="line">              短名称插在长名称前面。如果没有短名称，在其位置则</span><br><span class="line">              显示空白。</span><br><span class="line">  /4          用四位数字显示年</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<ul>
+<li>常用命令</li>
+</ul>
+<ol>
+<li>递归列出该路径下doc结尾的文件<blockquote>
+<p>dir /s /b *.doc </p>
+</blockquote>
+</li>
+<li>查看本地路径下存在目录<blockquote>
+<p>dir /aD</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p><strong>copy</strong> 复制文件</p>
+</li>
+<li><p><strong>xcopy</strong> 复制目录</p>
+</li>
+<li><p><strong>move</strong> 剪切</p>
+</li>
+<li><p><strong>ren</strong> 重命名</p>
+</li>
+<li><p><strong>replace</strong> 替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">replace /a 路径一 路径二  # 把文件添加到新地方，类似复制</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="自定义cmd界面"><a href="#自定义cmd界面" class="headerlink" title="自定义cmd界面"></a>自定义cmd界面</h3><p><strong>title</strong> 重名命cmd名称</p>
+<blockquote>
+<p>title this is test</p>
+</blockquote>
+<p><strong>mode</strong> 设置窗口大小(宽，高)</p>
+<blockquote>
+<p>mode 100,50</p>
+</blockquote>
+<p><strong>colour</strong> 设置cmd的背景和字体颜色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">0 = 黑色       8 = 灰色</span><br><span class="line">1 = 蓝色       9 = 淡蓝色</span><br><span class="line">2 = 绿色       A = 淡绿色</span><br><span class="line">3 = 浅绿色     B = 淡浅绿色</span><br><span class="line">4 = 红色       C = 淡红色</span><br><span class="line">5 = 紫色       D = 淡紫色</span><br><span class="line">6 = 黄色       E = 淡黄色</span><br><span class="line">7 = 白色       F = 亮白色</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>“COLOR fc” # 在亮白色上产生淡红色</p>
+</blockquote>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li>设置变量,以name变量为例<blockquote>
+<p>set name=xxx</p>
+</blockquote>
+</li>
+<li>打印变量<blockquote>
+<p>set name</p>
+</blockquote>
+</li>
+<li>释放变量<blockquote>
+<p>set name=</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>常用参数</strong></p>
+<ul>
+<li>set /a 表达式<blockquote>
+<p>set /a var name=4/2</p>
+</blockquote>
+</li>
+<li>set /p  命令行开关允许将变量数值设成用户输入的一行输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set /p name=请输入一个数字</span><br><span class="line">echo 你输入的数字是:%name%</span><br><span class="line">pause &gt;nul</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>永久变量设置</strong></p>
+<blockquote>
+<p>setx path “%path%;文件夹目录”</p>
+</blockquote>
+<h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><ul>
+<li><strong>|</strong> 管道符号</li>
+<li><strong>&amp;</strong> 类似and</li>
+<li><strong>&amp;&amp;</strong> 前面执行成功才执行后面</li>
+<li><strong>||</strong> 前面执行失败才执行后面</li>
+<li><strong>()</strong> 为了隔开美观</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># dir执行成功打印sucess 否则fales</span><br><span class="line">dir &amp;&amp; echo sucess || echo false</span><br></pre></td></tr></table></figure>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><ul>
+<li>? 代表单个字符<blockquote>
+<p>dir /b ??.mp4 # 列出两个字符名称的mp4文件</p>
+</blockquote>
+</li>
+<li>* 代表全部<blockquote>
+<p>dir /b *.mp4 # 列出所有mp4文件</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><h4 id="if语法格式"><a href="#if语法格式" class="headerlink" title="if语法格式"></a><strong>if</strong><code>语法格式</code></h4><ol>
+<li>判断文件或者文件夹是否存在, 用if exist语句<blockquote>
+<p>if exsit f:\1.txt (echo sucess) else (echo false)</p>
+</blockquote>
+</li>
+<li>判断某两个字符串是否相等。 用if “字符串1” == “字符串2” 语句<blockquote>
+<p>if “1”==”1” (echo sucess) else (echo false)</p>
+</blockquote>
+</li>
+<li>判断某个变量是否已经被赋值，用if defined str 语句<blockquote>
+<p>if defined name (echo succse)</p>
+</blockquote>
+</li>
+<li>判断两个数值是否相等，if 数值1 equ 数值2 语句<blockquote>
+<p>if 2 gtr 1 (echo sucess)</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><strong>条件符</strong></li>
+</ul>
+<ul>
+<li>等于 equ equal</li>
+<li>大于 gtr greater than</li>
+<li>大于或等于 geq</li>
+<li>小于 less  less than</li>
+<li>小于或等于 leq</li>
+<li>不等于 neq</li>
+</ul>
+<h4 id="for语法格式"><a href="#for语法格式" class="headerlink" title="for语法格式"></a><strong>for</strong><code>语法格式</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">FOR %variable IN (set) DO command [command-parameters]</span><br><span class="line"></span><br><span class="line">  %variable  指定一个单一字母可替换的参数。</span><br><span class="line">  (set)      指定一个或一组文件。可以使用通配符。</span><br><span class="line">  command    指定对每个文件执行的命令。</span><br><span class="line">  command-parameters</span><br><span class="line">             为特定命令指定参数或命令行开关。</span><br><span class="line"></span><br><span class="line">在批处理程序中使用 FOR 命令时，指定变量请使用 %%variable</span><br><span class="line">而不要用 %variable。变量名称是区分大小写的，所以 %i 不同于 %I.</span><br><span class="line"></span><br><span class="line">如果启用命令扩展，则会支持下列 FOR 命令的其他格式:</span><br><span class="line"></span><br><span class="line">FOR /D %variable IN (set) DO command [command-parameters]</span><br><span class="line"></span><br><span class="line">    如果集中包含通配符，则指定与目录名匹配，而不与文件名匹配。</span><br><span class="line"></span><br><span class="line">FOR /R [[drive:]path] %variable IN (set) DO command [command-parameters]</span><br><span class="line"></span><br><span class="line">    检查以 [drive:]path 为根的目录树，指向每个目录中的 FOR 语句。</span><br><span class="line">    如果在 /R 后没有指定目录规范，则使用当前目录。如果集仅为一个单点(.)字符，</span><br><span class="line">    则枚举该目录树。</span><br><span class="line"></span><br><span class="line">FOR /L %variable IN (start,step,end) DO command [command-parameters]</span><br><span class="line">该集表示以增量形式从开始到结束的一个数字序列。因此，(1,1,5)将产生序列</span><br><span class="line">    1 2 3 4 5，(5,-1,1)将产生序列(5 4 3 2 1)</span><br><span class="line"></span><br><span class="line">FOR /F [&quot;options&quot;] %variable IN (file-set) DO command [command-parameters]</span><br><span class="line">FOR /F [&quot;options&quot;] %variable IN (&quot;string&quot;) DO command [command-parameters]</span><br><span class="line">FOR /F [&quot;options&quot;] %variable IN (&apos;command&apos;) DO command [command-parameters]</span><br><span class="line"></span><br><span class="line">    或者，如果有 usebackq 选项:</span><br><span class="line"></span><br><span class="line">FOR /F [&quot;options&quot;] %variable IN (file-set) DO command [command-parameters]</span><br><span class="line">FOR /F [&quot;options&quot;] %variable IN (&quot;string&quot;) DO command [command-parameters]</span><br><span class="line">FOR /F [&quot;options&quot;] %variable IN (&apos;command&apos;) DO command [command-parameters]</span><br><span class="line"></span><br><span class="line">    fileset 为一个或多个文件名。继续到 fileset 中的下一个文件之前，</span><br><span class="line">    每份文件都被打开、读取并经过处理。处理包括读取文件，将其分成一行行的文字，</span><br><span class="line">    然后将每行解析成零或更多的符号。然后用已找到的符号字符串变量值调用 For 循环。</span><br><span class="line">    以默认方式，/F 通过每个文件的每一行中分开的第一个空白符号。跳过空白行。</span><br><span class="line">    你可通过指定可选 &quot;options&quot; 参数替代默认解析操作。这个带引号的字符串包括一个</span><br><span class="line">    或多个指定不同解析选项的关键字。这些关键字为:</span><br><span class="line"></span><br><span class="line">        eol=c           - 指一个行注释字符的结尾(就一个)</span><br><span class="line">        skip=n          - 指在文件开始时忽略的行数。</span><br><span class="line">        delims=xxx      - 指分隔符集。这个替换了空格和制表符的</span><br><span class="line">                          默认分隔符集。</span><br><span class="line">        tokens=x,y,m-n  - 指每行的哪一个符号被传递到每个迭代</span><br><span class="line">                          的 for 本身。这会导致额外变量名称的分配。m-n</span><br><span class="line">                          格式为一个范围。通过 nth 符号指定 mth。如果</span><br><span class="line">                          符号字符串中的最后一个字符星号，</span><br><span class="line">                          那么额外的变量将在最后一个符号解析之后</span><br></pre></td></tr></table></figure>
+<ol>
+<li>查看当前文件下的目录文件<blockquote>
+<p>for /d %i in (*) do echo %i</p>
+</blockquote>
+</li>
+<li>从指定文件中以空格分开，第二列后打开输出每行内容<blockquote>
+<p>for /F “token=2-3,delims=” %i in (e:\1.txt) do echo %i</p>
+</blockquote>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2020/01/21/cmd命令总结(一)/">http://bbkali.github.io/2020/01/21/cmd命令总结(一)/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/22/cmd命令总结(二)/"><i class="fas fa-angle-left">&nbsp;</i><span>cmd命令总结(二)</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/19/scrapy-Spider详解/"><span>scrapy-Spider详解</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 ～ 2020 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>

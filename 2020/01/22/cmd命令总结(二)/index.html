@@ -1,0 +1,88 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="cmd命令总结(二)"><meta name="keywords" content="Scrapy"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>cmd命令总结(二)【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"X7RY6NGU4G","apiKey":"bf7ed65264918bbc03f12b4cc1212d85","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#重定向操作符"><span class="toc-number">1.</span> <span class="toc-text">重定向操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络命令"><span class="toc-number">2.</span> <span class="toc-text">网络命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级命令"><span class="toc-number">3.</span> <span class="toc-text">高级命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-number">4.</span> <span class="toc-text">案例</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color0"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color0"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">80</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">65</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">31</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">cmd命令总结(二)</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-01-22 | 更新于 2020-01-22</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Scrapy/">Scrapy</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/Scrapy/">Scrapy</a></div></div></div><div class="main-content"><h3 id="重定向操作符"><a href="#重定向操作符" class="headerlink" title="重定向操作符"></a>重定向操作符</h3><p><strong>&gt;</strong>  输出<br><strong>&gt;&gt;</strong> 增加输出<br><strong>&lt;</strong> 输入</p>
+<p><strong>句柄的数字代码描述</strong></p>
+<ul>
+<li>0：键盘输入</li>
+<li>1：输出到命令提示符窗口</li>
+<li>2：错误输出</li>
+</ul>
+<blockquote>
+<p>di &gt;right.txt 2&gt;error.txt # 如果错误就输出到error.txt中去</p>
+</blockquote>
+<h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><p><strong>ping</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping host -t # 一直ping</span><br><span class="line">ping host -n count # 发送包量</span><br></pre></td></tr></table></figure></p>
+<p><strong>ifconfig</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /all # 查看所有网络配置信息</span><br><span class="line">ipconfig /renew # 更新所有适配器,重新获取ip</span><br><span class="line">ipconfig /release # 释放ip</span><br><span class="line">ipconfig /flushdns # 刷新dns</span><br></pre></td></tr></table></figure></p>
+<p><strong>netstat</strong> 显示当前网络协议连接情况</p>
+<blockquote>
+<p>netstat -ano # 查看当前连接情况</p>
+</blockquote>
+<p><strong>net</strong> </p>
+<ol>
+<li>net user # 查看用户信息</li>
+<li>lusrmgr.msc # 图形用户管理</li>
+<li>net localgroup # 本地用户组管理</li>
+<li>net share<blockquote>
+<p>net share f=F:/ 共享F盘<br>net share f /delete 取消共享<br>net start + 服务 # 开启服务</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>netsh</strong></p>
+<blockquote>
+<p>netsh dump &gt; 路径 # 备份所有的网络设置</p>
+</blockquote>
+<blockquote>
+<p>netsh int ip # 查看网卡设置<br>set address name=”wlan” source=static addr=192.168.0.2 mask=255.255.255.0 gateway=192.168.0.1 # 设置静态ip<br>set address name=”wlan” source=dhcp # 自动获取ip</p>
+</blockquote>
+<blockquote>
+<p>netsh winsock reset # 重新安装网络协议ping本地不通时</p>
+</blockquote>
+<blockquote>
+<p>netsh firewall set opmode mode=enable # 开启防火墙</p>
+</blockquote>
+<blockquote>
+<p>netsh wlan show profiles # 查看当前系统已经保存的网络</p>
+</blockquote>
+<blockquote>
+<p>netsh wlan show profiles name=”ssid” key=clear | findstr 关键内容# 查看某个ssid的信息其中含密码</p>
+</blockquote>
+<h3 id="高级命令"><a href="#高级命令" class="headerlink" title="高级命令"></a>高级命令</h3><p>attrib</p>
+<blockquote>
+<p>type nul&gt;1.txt # 创建空文件<br>attrib +h 1.txt # 将文件设置为隐藏</p>
+</blockquote>
+<p><strong>goto</strong> 跳转函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goto part1</span><br><span class="line"></span><br><span class="line">:part1</span><br><span class="line">echo test</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<p><strong>call</strong> 调用程序</p>
+<blockquote>
+<p>call demo.bat</p>
+</blockquote>
+<p><strong>start</strong> 打开程序</p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><ol>
+<li><p>在内网ping查找存活主机</p>
+<blockquote>
+<p>for /l %%i in (1,1,255) do ping -n 1 192.168.0.%i | findstr 字节 &gt;&gt; iplist.txt</p>
+</blockquote>
+</li>
+<li><p>批量创建文件或文件夹</p>
+<blockquote>
+<p>for /l %%i in (1,1,100) do md 新建文件夹%i</p>
+</blockquote>
+</li>
+<li><p>批量找出特定后缀的文件名</p>
+<blockquote>
+<p>for /r  f:\ %i in (*.txt) do echo %%i</p>
+</blockquote>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2020/01/22/cmd命令总结(二)/">http://bbkali.github.io/2020/01/22/cmd命令总结(二)/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/21/cmd命令总结(一)/"><span>cmd命令总结(一)</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 ～ 2020 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
