@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="cmd命令总结(二)"><meta name="keywords" content="Scrapy"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>cmd命令总结(二)【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="cmd命令总结(二)"><meta name="keywords" content="cmd"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>cmd命令总结(二)【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
 if (isPassword) {
     if (prompt('请输入文章密码') !== '') {
         alert('密码错误！');
@@ -13,7 +13,7 @@ if (isPassword) {
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#重定向操作符"><span class="toc-number">1.</span> <span class="toc-text">重定向操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络命令"><span class="toc-number">2.</span> <span class="toc-text">网络命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级命令"><span class="toc-number">3.</span> <span class="toc-text">高级命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-number">4.</span> <span class="toc-text">案例</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color0"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color0"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">80</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">65</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">31</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">cmd命令总结(二)</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-01-22 | 更新于 2020-01-22</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Scrapy/">Scrapy</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/Scrapy/">Scrapy</a></div></div></div><div class="main-content"><h3 id="重定向操作符"><a href="#重定向操作符" class="headerlink" title="重定向操作符"></a>重定向操作符</h3><p><strong>&gt;</strong>  输出<br><strong>&gt;&gt;</strong> 增加输出<br><strong>&lt;</strong> 输入</p>
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#重定向操作符"><span class="toc-number">1.</span> <span class="toc-text">重定向操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络命令"><span class="toc-number">2.</span> <span class="toc-text">网络命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级命令"><span class="toc-number">3.</span> <span class="toc-text">高级命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-number">4.</span> <span class="toc-text">案例</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color2"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color7"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">80</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">65</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">31</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">cmd命令总结(二)</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-01-22 | 更新于 2020-01-23</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/cmd/">cmd</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/cmd/">cmd</a></div></div></div><div class="main-content"><h3 id="重定向操作符"><a href="#重定向操作符" class="headerlink" title="重定向操作符"></a>重定向操作符</h3><p><strong>&gt;</strong>  输出<br><strong>&gt;&gt;</strong> 增加输出<br><strong>&lt;</strong> 输入</p>
 <p><strong>句柄的数字代码描述</strong></p>
 <ul>
 <li>0：键盘输入</li>
@@ -23,6 +23,7 @@ if (isPassword) {
 <blockquote>
 <p>di &gt;right.txt 2&gt;error.txt # 如果错误就输出到error.txt中去</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><p><strong>ping</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping host -t # 一直ping</span><br><span class="line">ping host -n count # 发送包量</span><br></pre></td></tr></table></figure></p>
 <p><strong>ifconfig</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /all # 查看所有网络配置信息</span><br><span class="line">ipconfig /renew # 更新所有适配器,重新获取ip</span><br><span class="line">ipconfig /release # 释放ip</span><br><span class="line">ipconfig /flushdns # 刷新dns</span><br></pre></td></tr></table></figure></p>
 <p><strong>netstat</strong> 显示当前网络协议连接情况</p>
@@ -68,6 +69,30 @@ if (isPassword) {
 <p>call demo.bat</p>
 </blockquote>
 <p><strong>start</strong> 打开程序</p>
+<p><strong>net use</strong> IPC</p>
+<ol>
+<li>建立空连接<blockquote>
+<p>net use \IP\ipc$ “” /user:””</p>
+</blockquote>
+</li>
+<li>建立非空连接<blockquote>
+<p>net use \IP\ipc$ “用户名” /user:”密码”</p>
+</blockquote>
+</li>
+<li>映射默认默认共享，将对方c盘映射本地z盘<blockquote>
+<p>net use z: \IP\c$ “密码” /user:”用户名”</p>
+</blockquote>
+</li>
+<li>删除一个IPC$连接<blockquote>
+<p>net use \IP\ipc$ /del</p>
+</blockquote>
+</li>
+<li>删除共享映射<blockquote>
+<p>net use c: /del</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>reg</strong> 增删改查注册表命令(regedit是图形表)</p>
 <h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><ol>
 <li><p>在内网ping查找存活主机</p>
 <blockquote>
@@ -82,6 +107,14 @@ if (isPassword) {
 <li><p>批量找出特定后缀的文件名</p>
 <blockquote>
 <p>for /r  f:\ %i in (*.txt) do echo %%i</p>
+</blockquote>
+</li>
+<li><p>在文件中检索关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title </span><br><span class="line">:start</span><br><span class="line">set /p name=请输入你要搜索的内容:</span><br><span class="line">type test.txt | findstr %name%</span><br><span class="line">if %name%==exit (goto end) else (goto start)</span><br><span class="line">:end</span><br><span class="line">exit</span><br><span class="line">pause &gt;nul</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置ip</p>
+<blockquote>
+<p>netsh interface ip set address name=”wlan” source=static addr=x mask=x gateway=x 1</p>
 </blockquote>
 </li>
 </ol>
