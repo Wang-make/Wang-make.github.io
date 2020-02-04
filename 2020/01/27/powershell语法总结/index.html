@@ -1,0 +1,146 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="powershell语法总结"><meta name="keywords" content="powershell"><meta name="author" content="bb,shuiyue75381@gmail.com"><meta name="copyright" content="bb"><title>powershell语法总结【bb的博客】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script><!--link(rel="dns-prefetch" href="https://cdn.jsdelivr.net")--><!--link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css")--><!--script(src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer)--><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"X7RY6NGU4G","apiKey":"bf7ed65264918bbc03f12b4cc1212d85","indexName":"myblog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#认识PowerShell"><span class="toc-number">1.</span> <span class="toc-text">认识PowerShell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell强大之处"><span class="toc-number">2.</span> <span class="toc-text">PowerShell强大之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell快捷键"><span class="toc-number">3.</span> <span class="toc-text">PowerShell快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell执行外部命令"><span class="toc-number">4.</span> <span class="toc-text">PowerShell执行外部命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell命令集"><span class="toc-number">5.</span> <span class="toc-text">PowerShell命令集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell别名使用"><span class="toc-number">6.</span> <span class="toc-text">PowerShell别名使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell自定义别名"><span class="toc-number">7.</span> <span class="toc-text">PowerShell自定义别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell变量基础"><span class="toc-number">8.</span> <span class="toc-text">PowerShell变量基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell变量操作"><span class="toc-number">9.</span> <span class="toc-text">PowerShell变量操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell自动化变量"><span class="toc-number">10.</span> <span class="toc-text">PowerShell自动化变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell环境变量"><span class="toc-number">11.</span> <span class="toc-text">PowerShell环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell脚本执行策略"><span class="toc-number">12.</span> <span class="toc-text">PowerShell脚本执行策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell与其他脚本程序的互相调用"><span class="toc-number">13.</span> <span class="toc-text">PowerShell与其他脚本程序的互相调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell条件操作符"><span class="toc-number">14.</span> <span class="toc-text">PowerShell条件操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell条件判断【if语句】"><span class="toc-number">15.</span> <span class="toc-text">PowerShell条件判断【if语句】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell条件判断【switch语句】"><span class="toc-number">16.</span> <span class="toc-text">PowerShell条件判断【switch语句】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell循环结构【foreach语句】"><span class="toc-number">17.</span> <span class="toc-text">PowerShell循环结构【foreach语句】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell循环结构【while语句】"><span class="toc-number">18.</span> <span class="toc-text">PowerShell循环结构【while语句】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#break和continue关键字使用"><span class="toc-number">19.</span> <span class="toc-text">break和continue关键字使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell循环结构【for语句】"><span class="toc-number">20.</span> <span class="toc-text">PowerShell循环结构【for语句】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell循环结构【switch循环】"><span class="toc-number">21.</span> <span class="toc-text">PowerShell循环结构【switch循环】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell数组的创建"><span class="toc-number">22.</span> <span class="toc-text">PowerShell数组的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell访问数组"><span class="toc-number">23.</span> <span class="toc-text">PowerShell访问数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell自定义函数及调用"><span class="toc-number">24.</span> <span class="toc-text">PowerShell自定义函数及调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell函数返回值"><span class="toc-number">25.</span> <span class="toc-text">PowerShell函数返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell定义文本"><span class="toc-number">26.</span> <span class="toc-text">PowerShell定义文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell实现用户交互"><span class="toc-number">27.</span> <span class="toc-text">PowerShell实现用户交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerShell格式化字符串"><span class="toc-number">28.</span> <span class="toc-text">PowerShell格式化字符串</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">bb</div><div class="author-info-description">This is myblog!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/bbkali" target="_blank">GitHub<i class="icon-dot bg-color1"></i></a><a class="links-button button-hover" href="mailto:shuiyue75381@gmail.com" target="_blank">E-Mail<i class="icon-dot bg-color7"></i></a><a class="links-button button-hover" href="tencent://message/?uin=1019593584&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color5"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">81</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">66</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">32</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="search social-icon"><i class="fas fa-search"></i><span> 搜索</span></a><a class="title-name" href="/">bb的博客</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">powershell语法总结</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-01-27 | 更新于 2020-02-04</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/powershell/">powershell</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/powershell/">powershell</a></div></div></div><div class="main-content"><h3 id="认识PowerShell"><a href="#认识PowerShell" class="headerlink" title="认识PowerShell"></a>认识PowerShell</h3><blockquote>
+<p>$psversiontable查看版本</p>
+</blockquote>
+<h3 id="PowerShell强大之处"><a href="#PowerShell强大之处" class="headerlink" title="PowerShell强大之处"></a>PowerShell强大之处</h3><ol>
+<li>快捷方便</li>
+<li>面向对象</li>
+<li>支持兼容.net vbs等</li>
+<li>可拓展性<h3 id="PowerShell快捷键"><a href="#PowerShell快捷键" class="headerlink" title="PowerShell快捷键"></a>PowerShell快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alt+f7 清除命令的历史纪录</span><br><span class="line">esc 清空当前命令行</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<a id="more"></a>
+<h3 id="PowerShell执行外部命令"><a href="#PowerShell执行外部命令" class="headerlink" title="PowerShell执行外部命令"></a>PowerShell执行外部命令</h3><blockquote>
+<p>&amp;”notepad”</p>
+</blockquote>
+<h3 id="PowerShell命令集"><a href="#PowerShell命令集" class="headerlink" title="PowerShell命令集"></a>PowerShell命令集</h3><p>以<code>动名词</code>来命名命令</p>
+<ul>
+<li><p>cmd 命令在powershell中可以直接使用</p>
+<blockquote>
+<p>get-command # 获取所有命令列表</p>
+</blockquote>
+</li>
+<li><p>帮助命令走天下</p>
+<blockquote>
+<p>get-help</p>
+</blockquote>
+<h3 id="PowerShell别名使用"><a href="#PowerShell别名使用" class="headerlink" title="PowerShell别名使用"></a>PowerShell别名使用</h3><blockquote>
+<p>get-alias -name ls # 查询ls的原始命令</p>
+</blockquote>
+<h3 id="PowerShell自定义别名"><a href="#PowerShell自定义别名" class="headerlink" title="PowerShell自定义别名"></a>PowerShell自定义别名</h3><blockquote>
+<p>set-alias -name pad -value notepad # 设置临时别名，将notepad赋给pad别名<br>del alias:pad # 删除别名<br>export-alias 1.psl # 导出别名<br>import-alias -force 1.psl # 强制导入别名</p>
+</blockquote>
+<h3 id="PowerShell变量基础"><a href="#PowerShell变量基础" class="headerlink" title="PowerShell变量基础"></a>PowerShell变量基础</h3></li>
+<li>等于号赋值<blockquote>
+<p>$name=”xx”</p>
+</blockquote>
+</li>
+<li>特殊变量名称用花括号包围<blockquote>
+<p>${“asdsad asdsd” var ()}</p>
+</blockquote>
+<h3 id="PowerShell变量操作"><a href="#PowerShell变量操作" class="headerlink" title="PowerShell变量操作"></a>PowerShell变量操作</h3></li>
+<li>支持多变量赋值<br>$name,$name2=1,2</li>
+<li>查看正在使用的变量<blockquote>
+<p>Get-Variable num* # 查找num特定变量值</p>
+</blockquote>
+</li>
+<li>确定变量是否存在<blockquote>
+<p>test-path variable:num1 # 返回的是布尔值</p>
+</blockquote>
+</li>
+<li>删除变量名<blockquote>
+<p>Remove-Variable num1 </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="PowerShell自动化变量"><a href="#PowerShell自动化变量" class="headerlink" title="PowerShell自动化变量"></a>PowerShell自动化变量</h3><p><strong>常用的变量</strong></p>
+<ul>
+<li>$pid</li>
+<li>$home</li>
+</ul>
+<h3 id="PowerShell环境变量"><a href="#PowerShell环境变量" class="headerlink" title="PowerShell环境变量"></a>PowerShell环境变量</h3><blockquote>
+<p>ls env: # 查看当前环境变量</p>
+</blockquote>
+<blockquote>
+<p>$env:os # 输出某个键的值</p>
+</blockquote>
+<blockquote>
+<p>$env:0s=”Linux” # 临时赋值变量</p>
+</blockquote>
+<ul>
+<li>设置永久环境变量（.net方式）<blockquote>
+<p>[environment]\::setenvironmentvariable(“PATH”,”D:\”,”User”)</p>
+</blockquote>
+<h3 id="PowerShell脚本执行策略"><a href="#PowerShell脚本执行策略" class="headerlink" title="PowerShell脚本执行策略"></a>PowerShell脚本执行策略</h3><blockquote>
+<p>get-executionpolicy # 查看当前运行策略</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">策略分类</span><br><span class="line">&gt; get-help set-executionpolicy</span><br><span class="line"></span><br><span class="line">语法</span><br><span class="line">    Set-ExecutionPolicy [-ExecutionPolicy] &#123;Unrestricted | RemoteSigned | AllSigned | Restricted | Default | Bypass | U</span><br><span class="line">    ndefined&#125; [[-Scope] &#123;Process | CurrentUser | LocalMachine | UserPolicy | MachinePolicy&#125;] [-Confirm] [-Force] [-What</span><br><span class="line">    If] [&lt;CommonParameters&gt;]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>set-executionpolicy RemoteSigned # 设置可以运行的策略</p>
+</blockquote>
+<h3 id="PowerShell与其他脚本程序的互相调用"><a href="#PowerShell与其他脚本程序的互相调用" class="headerlink" title="PowerShell与其他脚本程序的互相调用"></a>PowerShell与其他脚本程序的互相调用</h3><ol>
+<li>powershell直接可以执行bat、vbs、psl文件</li>
+<li>bat调用powershell 需要使用 powershell &amp;”文件路径”<h3 id="PowerShell条件操作符"><a href="#PowerShell条件操作符" class="headerlink" title="PowerShell条件操作符"></a>PowerShell条件操作符</h3></li>
+</ol>
+<ul>
+<li>-eq  #等于</li>
+<li>-lt #小于</li>
+<li>-gt #大于</li>
+<li>-contains #不包含<blockquote>
+<p>1,3,5 -contains 3</p>
+</blockquote>
+</li>
+<li>-notcontains</li>
+<li>-not</li>
+<li>-and</li>
+<li>-or</li>
+<li>-ne #不等于<blockquote>
+<p>1,3,5 -ne 3</p>
+</blockquote>
+<h3 id="PowerShell条件判断【if语句】"><a href="#PowerShell条件判断【if语句】" class="headerlink" title="PowerShell条件判断【if语句】"></a>PowerShell条件判断【if语句】</h3><blockquote>
+<p>if($num -gt 100){“1”} elseif($num -eq 100){“0”} else {“-1”}</p>
+</blockquote>
+<h3 id="PowerShell条件判断【switch语句】"><a href="#PowerShell条件判断【switch语句】" class="headerlink" title="PowerShell条件判断【switch语句】"></a>PowerShell条件判断【switch语句】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$number = 49</span><br><span class="line">switch($number)</span><br><span class="line">&#123;</span><br><span class="line">    &#123;$_ -le 50&#125; &#123;&quot;此数值小于50&quot;&#125;</span><br><span class="line">    &#123;$_ -eq 50&#125; &#123;&quot;此数值等于50&quot;&#125;</span><br><span class="line">    &#123;$_ -gt 50&#125; &#123;&quot;此数值大于50&quot;&#125;</span><br><span class="line">&#125;</span><br><span class="line">\\ $_代表变量</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="PowerShell循环结构【foreach语句】"><a href="#PowerShell循环结构【foreach语句】" class="headerlink" title="PowerShell循环结构【foreach语句】"></a>PowerShell循环结构【foreach语句】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$arr = 1,2,3,4,5 或者 $arr=1..10</span><br><span class="line">foreach ($n in $arr)</span><br><span class="line">&#123;</span><br><span class="line">    if($n -gt 5)</span><br><span class="line">        &#123;</span><br><span class="line">            $n</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PowerShell循环结构【while语句】"><a href="#PowerShell循环结构【while语句】" class="headerlink" title="PowerShell循环结构【while语句】"></a>PowerShell循环结构【while语句】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$num = 15</span><br><span class="line">while($num -gt 15)</span><br><span class="line">&#123;</span><br><span class="line">    $num</span><br><span class="line">    $num=$num-1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dowhile 至少运行一次<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">    $num</span><br><span class="line">    $num=$num-1</span><br><span class="line">&#125;</span><br><span class="line">while($num -gt 15)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="break和continue关键字使用"><a href="#break和continue关键字使用" class="headerlink" title="break和continue关键字使用"></a>break和continue关键字使用</h3><p><strong>break跳出</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$num=1</span><br><span class="line">while($num -lt 6)</span><br><span class="line">&#123;</span><br><span class="line">    if($num -gt 4)</span><br><span class="line">    &#123;</span><br><span class="line">        break</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        $num</span><br><span class="line">        $num++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>continue跳过</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$num=1</span><br><span class="line">while($num -lt 6)</span><br><span class="line">&#123;</span><br><span class="line">    if($num -gt 4)</span><br><span class="line">    &#123;</span><br><span class="line">        break</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        $num</span><br><span class="line">        $num++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="PowerShell循环结构【for语句】"><a href="#PowerShell循环结构【for语句】" class="headerlink" title="PowerShell循环结构【for语句】"></a>PowerShell循环结构【for语句】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$sum=0</span><br><span class="line">for($i=1;$i -;e 100;$i++)</span><br><span class="line">&#123;</span><br><span class="line">    $sum=$sum+$i</span><br><span class="line">&#125;</span><br><span class="line">$sum</span><br><span class="line">\\ 计算前100个数字的和</span><br></pre></td></tr></table></figure>
+<h3 id="PowerShell循环结构【switch循环】"><a href="#PowerShell循环结构【switch循环】" class="headerlink" title="PowerShell循环结构【switch循环】"></a>PowerShell循环结构【switch循环】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$num=1..10</span><br><span class="line">swith($num)</span><br><span class="line">&#123;</span><br><span class="line">    &#123;($_ % 2) -eq 0&#125; &#123;&quot;$_ 是偶数&quot;&#125;</span><br><span class="line">    &#123;($_ % 2) -ne 0&#125; &#123;&quot;$_ 是奇数&quot;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PowerShell数组的创建"><a href="#PowerShell数组的创建" class="headerlink" title="PowerShell数组的创建"></a>PowerShell数组的创建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$arr = ipconfig</span><br><span class="line">$arr</span><br><span class="line">$arr -is [array]</span><br><span class="line">\\ 判断是否是数组</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>$arr=ipconfig #cmd命令也可以执行<br>$arr=@() #创建空数组<br>$arr=1..10,”string”,(get-date)#创建混合数组 </p>
+</blockquote>
+<h3 id="PowerShell访问数组"><a href="#PowerShell访问数组" class="headerlink" title="PowerShell访问数组"></a>PowerShell访问数组</h3><blockquote>
+<p>$arr[0..2]</p>
+</blockquote>
+<h3 id="PowerShell自定义函数及调用"><a href="#PowerShell自定义函数及调用" class="headerlink" title="PowerShell自定义函数及调用"></a>PowerShell自定义函数及调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function myping($url)</span><br><span class="line">&#123;</span><br><span class="line">    ping $url</span><br><span class="line">&#125;</span><br><span class="line">myping www.baidu.com</span><br></pre></td></tr></table></figure>
+<h3 id="PowerShell函数返回值"><a href="#PowerShell函数返回值" class="headerlink" title="PowerShell函数返回值"></a>PowerShell函数返回值</h3><p><strong>return</strong></p>
+<h3 id="PowerShell定义文本"><a href="#PowerShell定义文本" class="headerlink" title="PowerShell定义文本"></a>PowerShell定义文本</h3><blockquote>
+<p>`转义</p>
+</blockquote>
+<h3 id="PowerShell实现用户交互"><a href="#PowerShell实现用户交互" class="headerlink" title="PowerShell实现用户交互"></a>PowerShell实现用户交互</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$input=read-host &quot;请输入具体的路径&quot;</span><br><span class="line">&quot;您当前的路径是:$input&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="PowerShell格式化字符串"><a href="#PowerShell格式化字符串" class="headerlink" title="PowerShell格式化字符串"></a>PowerShell格式化字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;my name is &#123;0&#125; ,iam &#123;1&#125; years old&quot; -f $name,$age</span><br></pre></td></tr></table></figure>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:shuiyue75381@gmail.com">bb</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://bbkali.github.io/2020/01/27/powershell语法总结/">http://bbkali.github.io/2020/01/27/powershell语法总结/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://bbkali.github.io">bb的博客</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/22/cmd命令总结(二)/"><span>cmd命令总结(二)</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 ～ 2020 By bb</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--><div class="search-dialog"><div id="algolia-search-title">Algolia</div><div class="search-close-button"><i class="fa fa-times"></i></div><!--div#current-refined-values--><!--div#clear-all--><div id="search-box"></div><!--div#refinement-list--><hr><div id="hits"></div><div id="algolia-pagination"></div></div><div class="search-mask"></div><script src="/js/search/algolia.js"></script></body></html>
